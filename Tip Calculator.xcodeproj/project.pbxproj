@@ -13,6 +13,8 @@
 		A6457A98245871A2008D71E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6457A96245871A2008D71E0 /* Main.storyboard */; };
 		A6457A9A245871A4008D71E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6457A99245871A4008D71E0 /* Assets.xcassets */; };
 		A6457A9D245871A4008D71E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6457A9B245871A4008D71E0 /* LaunchScreen.storyboard */; };
+		A6457AA62458766C008D71E0 /* BillAmountTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6457AA42458766C008D71E0 /* BillAmountTextField.swift */; };
+		A6457AA72458766C008D71E0 /* UIColor+TC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6457AA52458766C008D71E0 /* UIColor+TC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A6457A99245871A4008D71E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6457A9C245871A4008D71E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6457A9E245871A4008D71E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6457AA42458766C008D71E0 /* BillAmountTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillAmountTextField.swift; sourceTree = "<group>"; };
+		A6457AA52458766C008D71E0 /* UIColor+TC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+TC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,21 @@
 				A6457A92245871A2008D71E0 /* SceneDelegate.swift */,
 				A6457A94245871A2008D71E0 /* ViewController.swift */,
 				A6457A96245871A2008D71E0 /* Main.storyboard */,
+				A6457AA82458767C008D71E0 /* Supporting Files */,
 				A6457A99245871A4008D71E0 /* Assets.xcassets */,
-				A6457A9B245871A4008D71E0 /* LaunchScreen.storyboard */,
 				A6457A9E245871A4008D71E0 /* Info.plist */,
 			);
 			path = "Tip Calculator";
+			sourceTree = "<group>";
+		};
+		A6457AA82458767C008D71E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6457A9B245871A4008D71E0 /* LaunchScreen.storyboard */,
+				A6457AA42458766C008D71E0 /* BillAmountTextField.swift */,
+				A6457AA52458766C008D71E0 /* UIColor+TC.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6457AA62458766C008D71E0 /* BillAmountTextField.swift in Sources */,
+				A6457AA72458766C008D71E0 /* UIColor+TC.swift in Sources */,
 				A6457A95245871A2008D71E0 /* ViewController.swift in Sources */,
 				A6457A91245871A2008D71E0 /* AppDelegate.swift in Sources */,
 				A6457A93245871A2008D71E0 /* SceneDelegate.swift in Sources */,
@@ -294,7 +310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noturbuoy.Tip-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noturbuoy.Tip-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

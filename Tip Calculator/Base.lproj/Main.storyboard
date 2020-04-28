@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,13 +15,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-13-UU0" userLabel="Header">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1q-x4-FQ2">
+                                        <rect key="frame" x="47" y="42" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-Ux-PQv">
+                                        <rect key="frame" x="339" y="42" width="49" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="gVV-gJ-c9g"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imj-LM-Egd" userLabel="Tip Input">
+                                <rect key="frame" x="16" y="129" width="382" height="237.66666666666663"/>
+                                <color key="backgroundColor" name="tcDarkBlue"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doc-PA-huf" userLabel="Tip Output">
+                                <rect key="frame" x="16" y="390.66666666666669" width="382" height="237.33333333333331"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR6-rA-44r">
+                                <rect key="frame" x="16" y="652" width="382" height="60"/>
+                                <color key="backgroundColor" name="tcDarkBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mMr-YO-F57"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="tcOffWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JR6-rA-44r" secondAttribute="bottom" constant="24" id="4kV-Sb-JMz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Imj-LM-Egd" secondAttribute="trailing" constant="16" id="57j-0k-xVv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JR6-rA-44r" secondAttribute="trailing" constant="16" id="Azj-o4-tJU"/>
+                            <constraint firstItem="JR6-rA-44r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="D3O-ow-91F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="doc-PA-huf" secondAttribute="trailing" constant="16" id="Ecj-fh-yJf"/>
+                            <constraint firstItem="Cht-13-UU0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G4P-eC-4QH"/>
+                            <constraint firstItem="doc-PA-huf" firstAttribute="top" secondItem="Imj-LM-Egd" secondAttribute="bottom" constant="24" id="Gcv-xX-Wpf"/>
+                            <constraint firstItem="Imj-LM-Egd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ibb-Er-pBJ"/>
+                            <constraint firstItem="Imj-LM-Egd" firstAttribute="top" secondItem="Cht-13-UU0" secondAttribute="bottom" constant="24" id="JSU-zJ-LS0"/>
+                            <constraint firstItem="Cht-13-UU0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JnC-7J-ZB0"/>
+                            <constraint firstItem="doc-PA-huf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="egu-1p-4jM"/>
+                            <constraint firstItem="JR6-rA-44r" firstAttribute="top" secondItem="doc-PA-huf" secondAttribute="bottom" constant="24" id="joU-ry-pwX"/>
+                            <constraint firstItem="Cht-13-UU0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tTe-kn-txA"/>
+                            <constraint firstItem="doc-PA-huf" firstAttribute="height" secondItem="Imj-LM-Egd" secondAttribute="height" id="tls-dd-QYJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="121"/>
+            <point key="canvasLocation" x="137.68115942028987" y="120.65217391304348"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="tcDarkBlue">
+            <color red="0.16899999976158142" green="0.17599999904632568" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tcOffWhite">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
