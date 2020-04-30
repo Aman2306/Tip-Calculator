@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6044232245B53080079FA7B /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6044231245B53080079FA7B /* ColorTheme.swift */; };
 		A6457A91245871A2008D71E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6457A90245871A2008D71E0 /* AppDelegate.swift */; };
 		A6457A93245871A2008D71E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6457A92245871A2008D71E0 /* SceneDelegate.swift */; };
 		A6457A95245871A2008D71E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6457A94245871A2008D71E0 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6044231245B53080079FA7B /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		A6457A8D245871A2008D71E0 /* Tip Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6457A90245871A2008D71E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6457A92245871A2008D71E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				A6457A9B245871A4008D71E0 /* LaunchScreen.storyboard */,
 				A6457AA42458766C008D71E0 /* BillAmountTextField.swift */,
 				A6457AA52458766C008D71E0 /* UIColor+TC.swift */,
+				A6044231245B53080079FA7B /* ColorTheme.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				A6457AA62458766C008D71E0 /* BillAmountTextField.swift in Sources */,
 				A6457AA72458766C008D71E0 /* UIColor+TC.swift in Sources */,
 				A6457A95245871A2008D71E0 /* ViewController.swift in Sources */,
+				A6044232245B53080079FA7B /* ColorTheme.swift in Sources */,
 				A6457A91245871A2008D71E0 /* AppDelegate.swift in Sources */,
 				A6457A93245871A2008D71E0 /* SceneDelegate.swift in Sources */,
 			);
