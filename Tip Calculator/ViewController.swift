@@ -9,12 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        billAmountTextField.calculateButtonAction = {
+            self.calculate()
+        }
     }
-
+    
+    
     // MARK:- IBOutlets
     
     // Header
@@ -24,7 +28,7 @@ class ViewController: UIViewController {
     
     // Tip Input
     @IBOutlet weak var inputCardView: UIView!
-    @IBOutlet weak var billAmountTextField: UITextField!
+    @IBOutlet weak var billAmountTextField: BillAmountTextField!
     @IBOutlet weak var tipPercentSegmentedControl: UISegmentedControl!
     
     // Tip Output
@@ -38,7 +42,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     
     // MARK:- IBActions
-
+    
     @IBAction func themeToggled(_ sender: UISwitch) {
         if sender.isOn {
             print("switch toggled on")
@@ -48,13 +52,73 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tipPercentChanged(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
+        calculate()
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         print("Reset button tapped!")
+        clear()
     }
     
+    // MARK:- Methods
     
+    func calculate() {
+        
+        if self.billAmountTextField.isFirstResponder {
+            self.billAmountTextField.resignFirstResponder()
+        }
+        
+        // 1
+        guard let billAmountText = self.billAmountTextField.text,
+            let billAmount = Double(billAmountText) else {
+                clear()
+                return
+        }
+        var roundedBillAmount: Double {
+            return (100 * billAmount.rounded()) / 100
+        }
+        
+        // 2
+        let tipPercent: Double
+        switch tipPercentSegmentedControl.selectedSegmentIndex {
+        case 0:
+            tipPercent = 0.15
+        case 1:
+            tipPercent = 0.18
+        case 2:
+            tipPercent = 0.20
+        default:
+            preconditionFailure("Unexpected index.")
+        }
+        
+        var tipAmount: Double {
+            return roundedBillAmount * tipPercent
+        }
+        var roundedTipAmount: Double {
+            return (100 * tipAmount).rounded() / 100
+        }
+        
+        var totalAmount: Double {
+            return roundedBillAmount + roundedTipAmount
+        }
+        
+        print("Bill Amount: \(roundedBillAmount)")
+        print("Tip Amount: \(roundedTipAmount)")
+        print("Total Amount: \(totalAmount)")
+        
+        
+        // Update UI
+        self.billAmountTextField.text = String(format: "%.2f", roundedBillAmount)
+        self.tipAmountLabel.text = String(format: "₹%0.2f", roundedTipAmount)
+        self.totalAmountLabel.text = String(format: "₹%0.02f", totalAmount)
+        
+    }
+    
+    func clear() {
+        billAmountTextField.text = nil
+        tipPercentSegmentedControl.selectedSegmentIndex = 0
+        tipAmountLabel.text = String(format: "₹%0.2f", 0.0)
+        totalAmountLabel.text = String(format: "₹%0.02f", 0)
+    }
 }
 
